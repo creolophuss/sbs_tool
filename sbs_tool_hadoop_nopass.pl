@@ -60,7 +60,6 @@ if($org eq "CN"){
     $enable_book = 1;
 }
 
-
 if ($help) {
     printUsage();
     exit(0);
@@ -201,6 +200,163 @@ if ($org eq "CN"){
     ";
     $SBS_HOST = "scos-oih-cn-calculation-gamma-38002.pek50.amazon.com";
 }
+
+if ($org eq "CA"){
+    $env = "
+	export TZ=US/Pacific;
+	export OIH_NFS=scos-oih-nfs-na-1101.vdc.amazon.com;
+	export ORACLE_HOME=/opt/app/oracle/product/10.2.0.2/client;
+	export LD_LIBRARY_PATH=/apollo/env/Prioritization/lib;
+	export ORG=CA;
+	export PATH=\\\${PATH}:/opt/third-party/bin;
+	export DOMAIN=prod;
+	export REALM=CAAmazon;
+	export AMAZON_ENVIRONMENT=ca-hq;
+	export ROOT=/apollo/env/Prioritization;
+    ";
+    $SBS_HOST = "scos-oih-gamma-hadoop-i-5daf9177.us-east-1.amazon.com";
+}
+
+
+if ($org eq "EU"){
+    $env = "
+	export TZ=Europe/Berlin;
+	export OIH_NFS=scos-oih-nfs-na-1101.vdc.amazon.com;
+	export ORACLE_HOME=/opt/app/oracle/product/10.2.0.2/client;
+	export LD_LIBRARY_PATH=/apollo/env/Prioritization/lib;
+	export ORG=EU;
+	export PATH=\\\${PATH}:/opt/third-party/bin;
+	export DOMAIN=prod;
+	export REALM=EUAmazon;
+	export ROOT=/apollo/env/Prioritization;
+	export AMAZON_ENVIRONMENT=gb-hq;
+    ";
+    $SBS_HOST = undef;
+    $SBS_HOST = "scos-oih-gamma-eu-hadoop-i-bf75f8fc.eu-west-1.amazon.com";
+}
+
+if ($org eq "DE"){
+
+    $env = "
+	export TZ=Europe/Berlin;
+	export OIH_NFS=scos-oih-nfs-eu-12001.dub2;
+	export ORACLE_HOME=/opt/app/oracle/product/10.2.0.2/client;
+	export LD_LIBRARY_PATH=/apollo/env/Prioritization/lib;
+	export ORG=DE;
+	export PATH=\\\${PATH}:/opt/third-party/bin;
+	export DOMAIN=prod;
+	export REALM=DEAmazon;
+	export ROOT=/apollo/env/Prioritization;
+	export AMAZON_ENVIRONMENT=de-hq;
+    ";
+    $SBS_HOST = "scos-oih-gamma-eu-hadoop-i-bf75f8fc.eu-west-1.amazon.com";
+}
+
+
+if ($org eq "FR"){
+
+    $env = "
+	export TZ=Europe/Berlin;
+	export OIH_NFS=scos-oih-nfs-eu-12001.dub2;
+	export ORACLE_HOME=/opt/app/oracle/product/10.2.0.2/client;
+	export LD_LIBRARY_PATH=/apollo/env/Prioritization/lib;
+	export ORG=FR;
+	export PATH=\\\${PATH}:/opt/third-party/bin;
+	export DOMAIN=prod;
+	export REALM=FRAmazon;
+	export ROOT=/apollo/env/Prioritization;
+	export AMAZON_ENVIRONMENT=fr-hq;
+    ";
+    $SBS_HOST = "scos-oih-gamma-eu-hadoop-i-bf75f8fc.eu-west-1.amazon.com";
+}
+
+
+if ($org eq "IT"){
+
+    $env = "
+	export TZ=Europe/Berlin;
+	export OIH_NFS=scos-oih-nfs-eu-12001.dub2;
+	export ORACLE_HOME=/opt/app/oracle/product/10.2.0.2/client;
+	export LD_LIBRARY_PATH=/apollo/env/Prioritization/lib;
+	export ORG=IT;
+	export PATH=\\\${PATH}:/opt/third-party/bin;
+	export DOMAIN=prod;
+	export REALM=ITAmazon;
+	export ROOT=/apollo/env/Prioritization;
+	export AMAZON_ENVIRONMENT=it-hq;
+    ";
+    $SBS_HOST = "scos-oih-gamma-eu-hadoop-i-bf75f8fc.eu-west-1.amazon.com";
+}
+
+
+if ($org eq "ES"){
+
+    $env = "
+	export TZ=Europe/Berlin;
+	export OIH_NFS=scos-oih-nfs-eu-12001.dub2;
+	export ORACLE_HOME=/opt/app/oracle/product/10.2.0.2/client;
+	export LD_LIBRARY_PATH=/apollo/env/Prioritization/lib;
+	export ORG=ES;
+	export PATH=\\\${PATH}:/opt/third-party/bin;
+	export DOMAIN=prod;
+	export REALM=ESAmazon;
+	export ROOT=/apollo/env/Prioritization;
+	export AMAZON_ENVIRONMENT=es-hq;
+    ";
+    $SBS_HOST = "scos-oih-gamma-eu-hadoop-i-bf75f8fc.eu-west-1.amazon.com";
+}
+
+
+if ($org eq "JP"){
+
+    $env = "
+	export TZ=Europe/London;
+	export OIH_NFS=scos-oih-nfs-fe-4102.sea5.amazon.com;
+	export ORACLE_HOME=/opt/app/oracle/product/10.2.0.2/client;
+	export LD_LIBRARY_PATH=/apollo/env/Prioritization/lib;
+	export ORG=JP;
+	export PATH=\\\${PATH}:/opt/third-party/bin;
+	export DOMAIN=prod;
+	export REALM=JPAmazon;
+	export ROOT=/apollo/env/Prioritization;
+	export AMAZON_ENVIRONMENT=jp-hq;
+    ";
+    $SBS_HOST = "scos-oih-gamma-fe-hadoop-i-957c629d.us-west-2.amazon.com";
+}
+
+if ($org eq "IN"){
+
+    $env = "
+	export TZ=Europe/Berlin;
+	export OIH_NFS=scos-oih-nfs-eu-12001.dub2;
+	export ORACLE_HOME=/opt/app/oracle/product/10.2.0.2/client;
+	export LD_LIBRARY_PATH=/apollo/env/Prioritization/lib;
+	export ORG=IN;
+	export PATH=\\\${PATH}:/opt/third-party/bin;
+	export DOMAIN=prod;
+	export REALM=INAmazon;
+	export ROOT=/apollo/env/Prioritization;
+	export AMAZON_ENVIRONMENT=in-hq;
+    ";
+    $SBS_HOST = "scos-oih-gamma-eu-hadoop-i-bf75f8fc.eu-west-1.amazon.com";
+}
+
+if ($org eq "BR"){
+    $env = "
+	export TZ=Europe/Berlin;
+	export OIH_NFS=scos-oih-nfs-eu-12001.dub2;
+	export ORACLE_HOME=/opt/app/oracle/product/10.2.0.2/client;
+	export LD_LIBRARY_PATH=/apollo/env/Prioritization/lib;
+	export ORG=BR;
+	export PATH=\\\${PATH}:/opt/third-party/bin;
+	export DOMAIN=prod;
+	export REALM=BRAmazon;
+	export ROOT=/apollo/env/Prioritization;
+	export AMAZON_ENVIRONMENT=br-hq;
+    ";
+    $SBS_HOST = undef;
+}
+
 
 $script = $env;
 my $user = $ENV{'USER'};
@@ -348,7 +504,7 @@ sub init_sbs_space {
     my $dir_cmd = "
     echo $pswd | sudo -u ihradmin -S /apollo/env/OihHadoop/bin/apollo-hadoop fs -mkdir $report_root
 
-    if [ ! -d \\\"/home/$user\\\" ]];then
+    if [ ! -d \\\"/home/$user\\\" ] ;then
         echo 'Directory /home/$user does not exist , create one.'
         echo $pswd | sudo -S mkdir /home/$user
         echo $pswd | sudo -S chmod 777 /home/$user
