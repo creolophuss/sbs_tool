@@ -321,7 +321,7 @@ if ($org eq "JP"){
 	export ROOT=/apollo/env/Prioritization;
 	export AMAZON_ENVIRONMENT=jp-hq;
     ";
-    $SBS_HOST = "scos-oih-gamma-fe-hadoop-i-957c629d.us-west-2.amazon.com";
+    $SBS_HOST = "scos-oih-fe-31003.sea31.amazon.com";
 }
 
 if ($org eq "IN"){
@@ -504,7 +504,7 @@ sub init_sbs_space {
     my $dir_cmd = "
     echo $pswd | sudo -u ihradmin -S /apollo/env/OihHadoop/bin/apollo-hadoop fs -mkdir $report_root
 
-    if [ ! -d \\\"/home/$user\\\" ] ;then
+    if [ ! -d \\\"/home/$user\\\" ]];then
         echo 'Directory /home/$user does not exist , create one.'
         echo $pswd | sudo -S mkdir /home/$user
         echo $pswd | sudo -S chmod 777 /home/$user
